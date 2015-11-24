@@ -2,32 +2,32 @@
 
 #include <algorithm>
 
-szabi::extensible::manager::manager()
-{
-}
+namespace szabi {
+    namespace extensible {
 
-szabi::extensible::manager::~manager()
-{
-}
+        manager::manager() {
+        }
 
-void szabi::extensible::manager::load_extension(const std::string& path)
-{
-	auto pos = std::find_if(this->objects.begin(), this->objects.end(), [path](const szabi::shared_object& object) -> bool
-	{
-		return{ object.path() == path };
-	});
+        manager::~manager() {
+        }
 
-	if (pos == this->objects.end())
-	{
-		this->objects.emplace_back(path);
+        void manager::load_extension(const std::string &path) {
+            auto pos = std::find_if(this->objects.begin(), this->objects.end(),
+                                    [path](const szabi::shared_object &object) -> bool {
+                                        return {object.path() == path};
+                                    });
 
-		shared_object& object = this->objects.back();
+            if (pos == this->objects.end()) {
+                this->objects.emplace_back(path);
 
-		auto attach = object.template get_symbol<void(manager&)>("attach");
+                shared_object &object = this->objects.back();
 
-		if (attach)
-		{
-			attach(*this);
-		}
-	}
+                auto attach = object.template get_symbol<void(manager & )>("attach");
+
+                if (attach) {
+                    attach(*this);
+                }
+            }
+        }
+    }
 }

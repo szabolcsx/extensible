@@ -4,19 +4,18 @@
 #include <string>
 #include <memory>
 
-namespace szabi
-{namespace extensible
-{
-	template <typename I>
-	class extension : public I
-	{
-		public:
-			extension() {}
-			virtual ~extension() {}
+namespace szabi {
+    namespace extensible {
+        template<typename I>
+        class extension : public I {
+        public:
+            extension() { }
 
-			using interface_t = I;
-	};
-}
+            virtual ~extension() { }
+
+            using interface_t = I;
+        };
+    }
 }
 
 #endif /* EXTENSION_H_INCLUDED */

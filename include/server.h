@@ -6,50 +6,45 @@
 
 #include "version.h"
 
-namespace szabi
-{
-namespace extensible
-{
-	class manager;
+namespace szabi {
+    namespace extensible {
+        class manager;
 
-	class server_base
-	{
-		friend class manager;
-	public:
-		server_base()
-		{
+        class server_base {
+            friend class manager;
 
-		}
+        public:
+            server_base() {
 
-		virtual ~server_base()
-		{
+            }
 
-		}
-	protected:
-		virtual void attach(void*) = 0;
-	};
+            virtual ~server_base() {
 
-	template <typename I>
-	class server : public server_base
-	{
-	public:
-		using interface_t = I;
-        using interface_p = I*;
+            }
 
-		virtual void attached(I*) {}
+        protected:
+            virtual void attach(void *) = 0;
+        };
 
-	private:
-		std::vector<std::shared_ptr<I>> extensions;
+        template<typename I>
+        class server : public server_base {
+        public:
+            using interface_t = I;
+            using interface_p = I *;
 
-	protected:
-		void attach(void* object)
-		{
-			I* implementation = reinterpret_cast<I*>(object);
-			this->extensions.emplace_back(implementation);
-			this->attached(implementation);
-		}
-	};
-}
+            virtual void attached(I *) { }
+
+        private:
+            std::vector<std::shared_ptr<I>> extensions;
+
+        protected:
+            void attach(void *object) {
+                I *implementation = reinterpret_cast<I *>(object);
+                this->extensions.emplace_back(implementation);
+                this->attached(implementation);
+            }
+        };
+    }
 }
 
 #endif /* SERVER_H_INCLUDED */
