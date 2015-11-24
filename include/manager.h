@@ -10,7 +10,7 @@
 
 #include "shared_object.h"
 #include "server.h"
-#include "global.h"
+#include "extensible_export.h"
 #include "iextension.h"
 
 namespace szabi {
@@ -24,14 +24,14 @@ namespace szabi {
             EXTENSIBLE void load_extension(const std::string &path);
 
             template<typename S>
-            void register_server(server_base &server) {
+            void register_server(server_base &s) {
                 // Check if the server is inherited from right type
                 static_assert(std::is_base_of<server_base, S>::value, "The class must inherit from Server<>");
 
                 // Store a reference to that server with it's typeid as key
-                this->servers.emplace(typeid(typename server::interface_t), std::ref(server));
+                this->servers.emplace(typeid(typename S::interface_t), std::ref(s));
                 // Store the API Version to avoid crashes because of a version mismatch
-                this->api_version.emplace(typeid(typename server::interface_t), server::interface_t::api_version());
+                this->api_version.emplace(typeid(typename S::interface_t), S::interface_t::api_version());
             }
 
             template<typename E>
@@ -41,12 +41,12 @@ namespace szabi {
                 // when the extension was compiled
                 static_assert(std::is_base_of<iextension, E>::value,
                               "The extension's interface must inherit from Extensible::IExtension");
-                std::type_index index = typeid(typename extension::interface_t);
+                std::type_index index = typeid(typename E::interface_t);
 
                 auto pos = this->servers.find(index);
                 if (pos != this->servers.end()) {
                     // If both the server and the extension uses the same API, it could be loaded
-                    if (this->api_version[index] == extension::api_version()) {
+                    if (this->api_version[index] == E::api_version()) {
                         pos->second.get().attach(new E);
                     }
                     else {

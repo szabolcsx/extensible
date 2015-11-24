@@ -1,8 +1,9 @@
-#include <Extensible\manager.h>
-#include <Application\itest.h>
-#include <Extensible\extension.h>
+#include <manager.h>
+#include <extension.h>
 
-#include <Extensible/version.h>
+#include "itest.h"
+
+#include <version.h>
 
 #include <iostream>
 

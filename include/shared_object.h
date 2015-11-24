@@ -21,6 +21,6 @@ namespace szabi {
         void *get_raw_symbol(const std::string &);
 
         std::shared_ptr<void> object;
-        std::string path;
+        std::string object_path;
     };
 }

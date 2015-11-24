@@ -1,7 +1,7 @@
 #ifndef VERSION_H_INCLUDED
 #define VERSION_H_INCLUDED
 
-#include "global.h"
+#include "extensible_export.h"
 
 namespace szabi {
     struct EXTENSIBLE version {

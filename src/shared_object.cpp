@@ -18,14 +18,14 @@ namespace szabi {
             throw std::runtime_error("Unable to open library.");
         }
 
-        this->path = path;
+        this->object_path = path;
     }
 
     shared_object::~shared_object() {
     }
 
     std::string shared_object::path() const {
-        return this->path;
+        return this->object_path;
     }
 
     void *shared_object::get_raw_symbol(const std::string &name) {
