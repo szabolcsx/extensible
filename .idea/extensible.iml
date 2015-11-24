@@ -20,6 +20,10 @@
           <root url="file://C:/Qt/Tools/mingw492_32/lib/gcc/i686-w64-mingw32/4.9.2/include-fixed" />
           <root url="file://C:/Qt/Tools/mingw492_32/lib/gcc/i686-w64-mingw32/4.9.2/include/objc" />
           <root url="file://C:/Qt/Tools/mingw492_32/lib/gcc/i686-w64-mingw32/4.9.2/include/ssp" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/df2fd8ac/df2fd8ac/Debug" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/df2fd8ac/df2fd8ac/MinSizeRel" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/df2fd8ac/df2fd8ac/Release" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/df2fd8ac/df2fd8ac/RelWithDebInfo" />
           <root url="file://$MODULE_DIR$/include" />
         </CLASSES>
         <SOURCES>
@@ -28,6 +32,10 @@
           <root url="file://C:/Qt/Tools/mingw492_32/lib/gcc/i686-w64-mingw32/4.9.2/include-fixed" />
           <root url="file://C:/Qt/Tools/mingw492_32/lib/gcc/i686-w64-mingw32/4.9.2/include/objc" />
           <root url="file://C:/Qt/Tools/mingw492_32/lib/gcc/i686-w64-mingw32/4.9.2/include/ssp" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/df2fd8ac/df2fd8ac/Debug" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/df2fd8ac/df2fd8ac/MinSizeRel" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/df2fd8ac/df2fd8ac/Release" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/df2fd8ac/df2fd8ac/RelWithDebInfo" />
           <root url="file://$MODULE_DIR$/include" />
         </SOURCES>
       </library>

@@ -18,7 +18,8 @@ add_library(extensible SHARED
 
 include(GenerateExportHeader)
 generate_export_header(extensible
-        EXPORT_MACRO_NAME EXTENSIBLE)
+        EXPORT_MACRO_NAME EXTENSIBLE
+        EXPORT_FILE_NAME ${PROJECT_SOURCE_DIR}/include/extensible_export.h)
 
 target_link_libraries(application extensible)
 target_link_libraries(test_extension1 extensible)
