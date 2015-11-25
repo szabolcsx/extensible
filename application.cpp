@@ -1,4 +1,4 @@
-#include <manager.h>
+#include <extensible.h>
 #include "itest.h"
 
 #include <iostream>

@@ -1,9 +1,5 @@
-#include <manager.h>
-#include <extension.h>
-
+#include <extensible.h>
 #include "itest.h"
-
-#include <version.h>
 
 #include <iostream>
 
