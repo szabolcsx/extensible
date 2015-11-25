@@ -9,6 +9,7 @@
 namespace szabi {
     namespace extensible {
         class manager;
+        class iextension;
 
         class server_base {
             friend class manager;
@@ -23,7 +24,7 @@ namespace szabi {
             }
 
         protected:
-            virtual void attach(void *) = 0;
+            virtual void attach(iextension *) = 0;
         };
 
         template<typename I>
@@ -38,8 +39,8 @@ namespace szabi {
             std::vector<std::shared_ptr<I>> extensions;
 
         protected:
-            void attach(void *object) {
-                I *implementation = reinterpret_cast<I *>(object);
+            void attach(iextension *object) {
+                I *implementation = static_cast<I *>(object);
                 this->extensions.emplace_back(implementation);
                 this->attached(implementation);
             }
