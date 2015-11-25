@@ -1,4 +1,4 @@
-#include "shared_object.h"
+#include <extensible/shared_object.h>
 
 #include <iostream>
 
