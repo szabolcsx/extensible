@@ -9,15 +9,15 @@
 #  ifndef EXTENSIBLE
 #    ifdef extensible_EXPORTS
         /* We are building this library */
-#      define EXTENSIBLE __declspec(dllexport)
+#      define EXTENSIBLE __attribute__((visibility("default")))
 #    else
         /* We are using this library */
-#      define EXTENSIBLE __declspec(dllimport)
+#      define EXTENSIBLE __attribute__((visibility("default")))
 #    endif
 #  endif
 
 #  ifndef EXTENSIBLE_NO_EXPORT
-#    define EXTENSIBLE_NO_EXPORT 
+#    define EXTENSIBLE_NO_EXPORT __attribute__((visibility("hidden")))
 #  endif
 #endif
 
