@@ -5,8 +5,8 @@
 #ifndef EXTENSIBLE_EXTENSIBLE_H
 #define EXTENSIBLE_EXTENSIBLE_H
 
-#include <iextension.h>
-#include <manager.h>
-#include <extension.h>
+#include <extensible/iextension.h>
+#include <extensible/manager.h>
+#include <extensible/extension.h>
 
 #endif //EXTENSIBLE_EXTENSIBLE_H
