@@ -1,2 +1,2 @@
-# extensible
+# szabi::extensible
 ### Create extensible applications
