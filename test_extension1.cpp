@@ -20,7 +20,7 @@ public:
     }
 };
 
-extern "C" __declspec(dllexport) void attach(szabi::extensible::manager &manager) {
+EXTENSION_ATTACHER void attach(szabi::extensible::manager &manager) {
     try {
         manager.attach<test_extension1>("test_extension1");
     }

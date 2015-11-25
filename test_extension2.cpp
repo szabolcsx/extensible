@@ -26,6 +26,6 @@ public:
 
 #include <iostream>
 
-extern "C" __declspec(dllexport) void attach(szabi::extensible::manager &manager) {
+EXTENSION_ATTACHER void attach(szabi::extensible::manager &manager) {
     manager.attach<test_extension2>("test_extension2");
 }
