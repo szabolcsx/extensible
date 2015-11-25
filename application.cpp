@@ -44,8 +44,13 @@ int main() {
         szabi::extensible::manager manager;
         manager.register_server<test1>(t1);
         manager.register_server<test2>(t2);
+#ifdef _WIN32
         manager.load_extension("libtest_extension1.dll");
         manager.load_extension("libtest_extension2.dll");
+#elif linux
+        manager.load_extension("./libtest_extension1.so");
+        manager.load_extension("./libtest_extension2.so");
+#endif
     }
     catch (const std::exception &ex) {
         std::cout << ex.what() << std::endl;
