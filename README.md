@@ -1,2 +1,2 @@
 # extensible
-Extend your application using plugins
+Create extensible applications
