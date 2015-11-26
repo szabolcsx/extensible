@@ -1,7 +1,9 @@
-#include <extensible.h>
+#include <szabi/extensible.h>
 #include "itest.h"
 
 #include <iostream>
+#include <szabi/extensible/manager.h>
+#include <szabi/extensible/extension.h>
 
 class test_extension2 : public szabi::extensible::extension<itest2> {
 public:
@@ -20,8 +22,11 @@ public:
     }
 };
 
-#include <iostream>
-
 EXTENSION_ATTACHER void attach(szabi::extensible::manager &manager) {
-    manager.attach<test_extension2>("test_extension2");
+    try {
+        manager.attach<test_extension2>("test_extension2");
+    }
+    catch (...) {
+
+    }
 }

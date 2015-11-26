@@ -1,7 +1,7 @@
 #ifndef ITEST_H_INCLUDED
 #define ITEST_H_INCLUDED
 
-#include <extensible/iextension.h>
+#include <szabi/extensible/iextension.h>
 
 class itest1 : public szabi::extensible::iextension {
 public:

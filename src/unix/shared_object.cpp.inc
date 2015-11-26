@@ -1,4 +1,4 @@
-#include <extensible/shared_object.h>
+#include <szabi/extensible/shared_object.h>
 #include <dlfcn.h>
 
 #include <iostream>

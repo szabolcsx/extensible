@@ -1,4 +1,4 @@
-#include <extensible.h>
+#include <szabi/extensible.h>
 #include "itest.h"
 
 #include <iostream>
@@ -55,8 +55,6 @@ int main() {
     catch (const std::exception &ex) {
         std::cout << ex.what() << std::endl;
     }
-
-    std::cin.get();
 
     return 0;
 }

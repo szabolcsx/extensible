@@ -1,4 +1,4 @@
-#include <extensible.h>
+#include <szabi/extensible.h>
 #include "itest.h"
 
 #include <iostream>

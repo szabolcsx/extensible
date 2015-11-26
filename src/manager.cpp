@@ -1,4 +1,4 @@
-#include <extensible/manager.h>
+#include <szabi/extensible/manager.h>
 
 #include <algorithm>
 
