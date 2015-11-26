@@ -36,3 +36,15 @@ endif(UNIX)
 
 target_link_libraries(test_extension1 extensible)
 target_link_libraries(test_extension2 extensible)
+
+install(TARGETS extensible DESTINATION lib)
+install(FILES
+        include/szabi/extensible/extensible_export.h
+        include/szabi/extensible/extension.h
+        include/szabi/extensible/iextension.h
+        include/szabi/extensible/manager.h
+        include/szabi/extensible/server.h
+        include/szabi/extensible/shared_object.h
+        include/szabi/extensible/version.h
+        DESTINATION include/szabi/extensible)
+install(FILES include/szabi/extensible.h DESTINATION include/szabi)
